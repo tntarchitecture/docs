@@ -1,0 +1,24 @@
+---
+title: "Package"
+description: "Để hệ thống load các package con một cách chủ động, dễ quản lý, kiểm tra và cập nhật, bạn có thể thực hiện một số thay đổi và chuẩn hóa như sau:"
+---
+
+# 1. Chuẩn Hóa Tên File Loader Mỗi Package
+
+Sử dụng tên file loader duy nhất và có ý nghĩa cho mỗi thư mục package. Hiện tại, mã 010:SYS:TRY-LOAD-PACKAGE đang tìm các file bắt đầu bằng A_010_System_Package (không phân biệt hoa thường) trong từng thư mục con. Bạn có thể lợi dụng cơ chế wildcard có sẵn để đặt tên file loader cho dễ nhận biết:
+
+- Ví dụ:
+  - Thư mục 02_SETTINGS chứa file loader đặt tên A_010_System_Package_Settings.lsp
+  - Thư mục 04_PACKAGE_01_CREATE chứa file loader A_010_System_Package_01_Create.lsp
+  - Tương tự, 05_PACKAGE_02_GENERAL chứa A_010_System_Package_02_General.lsp, v.v.
+
+Lợi ích:
+
+- Tên file loader chứa luôn tên hoặc số thứ tự module giúp dễ dàng nhận biết module nào đã được load (thay vì tất cả đều tên giống nhau).
+- Log hiển thị từ hàm 010:SYS:LOG sẽ rõ ràng hơn: bạn sẽ thấy đường dẫn đầy đủ của file loader được load, bao gồm tên file mô tả package đó, giúp kiểm tra nhanh package nào đã được nạp.
+
+Lưu ý:
+
+- Mỗi thư mục package chỉ nên có _một_ file loader khớp với mẫu A_010_System_Package\_\*.lsp. Nếu có nhiều file khớp, hàm hiện tại chỉ load file đầu tiên theo thứ tự abc (sau khi acad_strlsort). Để tránh nhầm lẫn, hãy duy trì một loader duy nhất.
+
+Trường hợp bạn cần chia nhỏ code trong một package thành nhiều file, hãy để một file loader chính (theo mẫu trên) và trong file đó load các file phụ khác. Như vậy, hệ thống vẫn chỉ tìm một loader per folder, nhưng loader đó có thể tự nạp thêm module con nếu cần.

@@ -11,32 +11,32 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Hướng dẫn chung",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Package",
             "pages": [
-              "index",
-              "quickstart"
+              "cad-manual/package",
+              "cad-manual/danh-muc"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Cad Manual",
         "groups": []
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "anchor": "Trang chủ",
+          "href": "https://kientructnt.com/",
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
+          "anchor": "Facebook",
+          "href": "https://www.facebook.com/tnt.architects/",
           "icon": "newspaper"
         }
       ]
@@ -50,13 +50,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://zalo.me/0976080346"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://dashboard.mintlify.com/tntarchitecture-fd0e9442/tntarchitecture-fd0e9442"
     }
   },
   "contextual": {
@@ -73,9 +73,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "instagram": "https://www.instagram.com/tntarchitects/",
+      "github": "https://github.com/tntarchitecture",
+      "facebook": "https://www.facebook.com/tnt.architects/"
     }
   }
 }
